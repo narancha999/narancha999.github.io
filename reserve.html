@@ -147,9 +147,44 @@
               </div>
               <div class="mb-3">
                 <span class="d-block form-label ">席選択</span>
-                <p class="typo-small mb-0">※クリックでモーダルウィンドウが開きます</p>
-                <button id="seat-select" class="button">席を選択する</button>
-                <div class=""></div>
+                <p class="typo-small mb-0">※ボタンクリックでモーダルウィンドウが開きます</p>
+                <button id="seat_select" class="button button-seat mb-1" type="button" data-toggle="modal"
+                  data-target="#myModal">席を選択する</button>
+                <div class="d-block">
+                  <input type="text" id="seat" class="js-form-input form-input form-input-small pl-3 mr-1" name="seat"
+                    placeholder="1" value="" disabled="disabled" required>番卓
+                </div>
+
+                <!-- modal settings -->
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">席選択</h5>
+                        <button type="button" class="close modal-close" data-dismiss="modal" aria-label="閉じる">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <p class="mb-0">※レイアウト図を参考に席を選択してください</p>
+                        <div class="">
+                          <img src="images/layout.png" alt="">
+                        </div>
+                        <select id="select_seat" class="d-block js-form-input form-input mb-2" name="reserve_staff">
+                          <option label="- 席を選択 -" selected></option>
+                          <option value="1">1番/1名/カウンター</option>
+                          <option value="2">2番/1名/カウンター</option>
+                          <option value="3">3番/2名/ボックス</option>
+                          <option value="4">4番/2名/ボックス</option>
+                          <option value="5">5番/4名/テーブル</option>
+                        </select>
+                        <button id="seat_submit" class="button button-seat" type="button ">席を決定する</button>
+                      </div>
+                    </div><!-- /.modal-content -->
+                  </div><!-- /.modal-dialog -->
+                </div><!-- /.modal -->
+
+
               </div>
               <div class="mb-2">
                 <label class="d-block form-label">備考 <span class="">※任意</span></label>
