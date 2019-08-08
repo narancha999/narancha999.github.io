@@ -1,0 +1,51 @@
+@charset "utf-8";
+/*
+#font
+サイト全体で使うfont-familyの変数を指定する
+*/
+
+@import url('https://fonts.googleapis.com/earlyaccess/notosansjp.css');
+/* フォントを指定したいところで
+font-family: 'Noto Sans JP';
+*/
+@import url('https://fonts.googleapis.com/css?family=Libre+Baskerville&display=swap');
+/* フォントを指定したいところで
+font-family: 'Libre Baskerville', serif;
+*/
+
+$font-jp: -apple-system,
+BlinkMacSystemFont,
+'Helvetica Neue',
+'Segoe UI',
+YuGothic,
+'Yu Gothic Medium',
+'Hiragino Sans',
+'Hiragino Kaku Gothic ProN',
+Meiryo,
+sans-serif; //邦字フォント
+
+$font-mincho: Georgia,
+'Hiragino Mincho ProN',
+'Yu Mincho',
+serif; //明朝
+
+$font-gothic: 'Noto Sans Japanese',
+sans-serif; //ゴシック
+
+// body
+$base-font-size: 1.6em;
+$base-line-height: 1.7;
+
+// フォント サイズ別
+$font-size-xsmall: 1.2rem;
+$font-size-small: 1.4rem;
+$font-size: 1.6rem;
+$font-size-large: 1.8rem;
+$font-size-xlarge: 2rem;
+
+// 行の高さ サイズ別
+$line-height-xsmall: 1.2;
+$line-height-small: 1.4;
+$line-height: 1.5;
+$line-height-large: 1.7;
+$line-height-xlarge: 2;

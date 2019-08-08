@@ -1,0 +1,44 @@
+@charset "utf-8";
+/*
+#l_container
+内容のレイアウトスタイル指定
+*/
+
+.l-container-1 {
+  background: #f7f2f2;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.16);
+  border: 1px solid #C2C2C2;
+  border-radius: 5px;
+
+  @media screen and (max-width: 600px) {}
+}
+
+.l-container-2 {
+  @media screen and (max-width: 600px) {}
+}
+
+.l-container-3 {
+  @media screen and (max-width: 600px) {}
+}
+
+.l-container-4 {}
+
+.l-container-5 {}
+
+.l-container-6 {}
+
+.l-container-7 {}
+
+.l-container-8 {}
+
+.l-container-9 {}
+
+.l-container-10 {}
+
+.l-container-11 {}
+
+.l-container-12 {}
+
+.l-container-13 {}
+
+.l-container-14 {}

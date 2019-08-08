@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>予約管理システム</title>
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+  <link rel="manifest" href="images/favicon/site.webmanifest">
+  <link rel="mask-icon" href="images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+  <div class="wrapper">
+    <!-- [header] -->
+    <header class="mb-5">
+      <section class="container">
+        <div class="row">
+          <div class="col-10 mx-auto">
+            <h1 class="h-site-title pt-3 pb-1">予約管理<span class="">システム</span><a href="/" ontouchstart=""></a></h1>
+          </div>
+        </div>
+      </section>
+
+      <nav class="nav-wrap">
+        <ul class="nav">
+          <li class="nav-item"><a href="/" ontouchstart=""><i class="fas fa-home icon mr-1"></i>TOP</a></li>
+          <li class="nav-item active"><a href="reserve.html" ontouchstart=""><i
+                class="far fa-calendar-plus icon mr-1"></i>予約情報追加</a>
+          </li>
+          <li class="nav-item"><a href="reserve-list.html" ontouchstart=""><i
+                class="far fa-list-alt icon mr-1"></i>予約一覧</a></li>
+          <li class="nav-item"><a href="settings.html" ontouchstart=""><i class="fas fa-cog icon mr-1"></i>設定</a></li>
+        </ul>
+      </nav>
+    </header>
+    <!-- [/header] -->
+    <!-- [main] -->
+    <main class="mb-5">
+      <h2 class="text-center h-big h-big-bold">新規予約情報入力</h2>
+      <p class="text-center">※「任意」とある項目以外、入力が必須です。</p>
+      <section class="container">
+        <div class="row">
+          <div class="col-10 mx-auto l-container-1 pt-4 pb-5">
+            <form action="reserve_post.php" method="POST" class="form-wrap mx-auto">
+              <div class="mb-3">
+                <label for="phone_no" class="d-block form-label ">電話番号</label>
+                <input type="text" class="js-form-input form-input pl-3" id="phone_no" name="phone_no"
+                  placeholder="09012345678" value="" pattern="\d{2,4}-?\d{3,4}-?\d{3,4}" required>
+              </div>
+              <div class="mb-3">
+                <label for="client_name" class="d-block form-label ">お名前</label>
+                <input type="text" class="js-form-input form-input pl-3" id="client_name" name="client_name"
+                  placeholder="お名前" value="" pattern=".{1,15}" required>
+              </div>
+              <div class="mb-3">
+                <label for="reserve_date" class="d-block form-label ">予約日</label>
+                <input type="date" class="js-form-input form-input pl-3 mb-1" id="reserve_date" name="reserve_date"
+                  placeholder="YYYY-MM-DD" value="" required>
+                <label for="reserve_time" class="d-block form-label ">予約時刻</label>
+                <select id="reserve_time_start" class="js-form-input form-input mb-1" name="reserve_time_start"
+                  required>
+                  <option label="- 開始時刻選択 -" selected></option>
+                  <option value="17:00">17時00分</option>
+                  <option value="17:30">17時30分</option>
+                  <option value="18:00">18時00分</option>
+                  <option value="18:30">18時30分</option>
+                  <option value="19:00">19時00分</option>
+                  <option value="19:30">19時30分</option>
+                  <option value="20:00">20時00分</option>
+                  <option value="20:30">20時30分</option>
+                  <option value="21:00">21時00分</option>
+                  <option value="21:30">21時30分</option>
+                  <option value="22:00">22時00分</option>
+                  <option value="22:30">22時30分</option>
+                </select>
+                <span class="">～</span>
+                <select id="reserve_time_end" class="js-form-input form-input" name="reserve_time_end" required>
+                  <option label="- 終了時刻選択 -" selected></option>
+                  <option value="17:00">17時00分</option>
+                  <option value="17:30">17時30分</option>
+                  <option value="18:00">18時00分</option>
+                  <option value="18:30">18時30分</option>
+                  <option value="19:00">19時00分</option>
+                  <option value="19:30">19時30分</option>
+                  <option value="20:00">20時00分</option>
+                  <option value="20:30">20時30分</option>
+                  <option value="21:00">21時00分</option>
+                  <option value="21:30">21時30分</option>
+                  <option value="22:00">22時00分</option>
+                  <option value="22:30">22時30分</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <div class="">
+                  <span class="d-block form-label ">人数</span>
+                  <label class="quantity_adult">大人</label>
+                  <input type="number" class="js-form-input form-input form-input-small pl-3 mb-1" id="quantity_adult"
+                    name="quantity_adult" placeholder="0" value="">人
+                </div>
+                <div class="">
+                  <label class="quantity_adult">子供</label>
+                  <input type="number" class="js-form-input form-input form-input-small pl-3" id="quantity_child"
+                    name="quantity_child" placeholder="0" value="">人
+                </div>
+              </div>
+              <div class="mb-3 form-radio">
+                <span class="d-block form-label">席タイプ</span>
+                <div class="d-block">
+                  <label for="seat_type_0" class="mb-1">
+                    <input type="radio" id="seat_type_0" class="form-radio-input" name="seat_type" value="box"
+                      checked><span class="form-radio-icon"></span>指定なし</label>
+                </div>
+                <div class="d-block">
+                  <label for="seat_type_1" class="mb-1 form-radio-label">
+                    <input type="radio" id="seat_type_1" class="form-radio-input" name="seat_type" value="counter"><span
+                      class="form-radio-icon"></span>ボックス席</label>
+                </div>
+                <div class="d-block">
+                  <label for="seat_type_2" class="mb-1">
+                    <input type="radio" id="seat_type_2" class="form-radio-input" name="seat_type" value="table"><span
+                      class="form-radio-icon"></span>カウンター</label>
+                </div>
+                <div class="d-block">
+                  <label for="seat_type_3" class="mb-1">
+                    <input type="radio" id="seat_type_3" class="form-radio-input" name="seat_type" value="table"><span
+                      class="form-radio-icon"></span>個室</label>
+                </div>
+              </div>
+              <div class="mb-3">
+                <span class="d-block form-label ">喫煙 <span class="">※任意</span></span>
+                <label for="seat_smoke_0" class="d-block mb-1">
+                  <input type="checkbox" id="seat_smoke_0" class="form-checkbox-input" name="seat_smoke" value="0"><span
+                    class="form-checkbox-icon"></span>禁煙席
+                </label>
+                <label for="seat_smoke_1" class="d-block mb-1">
+                  <input type="checkbox" id="seat_smoke_1" class="form-checkbox-input" name="seat_smoke" value="1"><span
+                    class="form-checkbox-icon"></span>喫煙席
+                </label>
+              </div>
+              <div class="mb-3">
+                <span class="d-block form-label ">席選択</span>
+                <p class="typo-small mb-0">※クリックでモーダルウィンドウが開きます</p>
+                <button id="seat-select" class="button">席を選択する</button>
+                <div class=""></div>
+              </div>
+              <div class="mb-2">
+                <label class="d-block form-label">備考 <span class="">※任意</span></label>
+                <textarea name="" id="reserve_remark" class="w-100 pl-3" cols="10" rows="4"
+                  pattern=".{1,255}"></textarea>
+              </div>
+              <div class="mb-5">
+                <label for="reserve_staff" class="d-block form-label">受付スタッフ</label>
+                <select id="reserve_staff" class="d-block js-form-input form-input" name="reserve_staff">
+                  <option label="- スタッフ選択 -" selected></option>
+                  <option value="10001">10001：やきにくやく夫</option>
+                  <option value="10002">10002：やきにく代</option>
+                  <option value="10003">10003：やきにく三太郎</option>
+                  <option value="10004">10004：やきにく承太郎</option>
+                  <option value="10005">10005：ハラミ三郎</option>
+                </select>
+              </div>
+              <div class="text-center">
+                <input type="submit" id="btnSubmit" class="button button-submit mr-2" name="btnSubmit" value="予約する">
+                <input type="reset" id="btnReset" class="button button-reset" name="btnReset" value="リセット">
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- [/main] -->
+    <!-- [footer] -->
+    <footer class="l-footer">
+      <section class="l-footer-content">
+        <a href="#" ontouchstart=""><i class="fas fa-long-arrow-alt-up mr-2"></i>ページTOPへ</a>
+      </section>
+      <section class="l-footer-content py-4">
+        <small class="typo-copyright">&copy; 2019 yakiniku</small>
+      </section>
+    </footer>
+    <!-- [/footer] -->
+
+  </div>
+  <!-- ./wrapper -->
+
+  <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+  <![endif]-->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

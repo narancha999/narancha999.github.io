@@ -1,0 +1,42 @@
+@charset "utf-8";
+/*
+#page-top
+ページトップへモジュールのスタイル指定
+*/
+
+.page-top {
+  width: 130px;
+  height: 30px;
+  position: fixed;
+  right: -300px; // 要素が隠れている初期値
+  bottom: 50px;
+  background: rgba(255, 255, 255, 0.6);
+  transform: rotate(90deg);
+  z-index: 999;
+
+  &:hover {
+    opacity: .9;
+  }
+
+  >a {
+    position: relative;
+    display: block;
+    padding-left: 1em;
+    width: 130px;
+    height: 30px;
+    text-decoration: none;
+    font-family: $font-gothic;
+    font-size: $font-size-small;
+    font-weight: 600;
+    color: $color-default;
+    line-height: 30px;
+    cursor: pointer;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+
+    &:hover {
+      // opacity: .9;      
+      animation: left-slide-min .3s linear both;
+    }
+  }
+}

@@ -1,0 +1,40 @@
+@charset "utf-8";
+/*
+#l_footer
+footerのレイアウトスタイル指定
+*/
+
+.l-footer {
+
+  text-align: center;
+  color: #EBEBEB;
+}
+
+.l-footer-content {
+
+  &:first-child {
+    border-bottom: 1px solid #333333;
+  }
+
+  &:last-child {
+    background-color: #261414;
+  }
+
+  >a {
+    position: relative;
+    display: block;
+    background-color: #261414;
+    color: #EBEBEB;
+    font-weight: 600;
+    line-height: 50px;
+    -webkit-transition: all .15s;
+    transition: all .15s;
+
+    &:hover {
+      text-decoration: none;
+      opacity: 0.85;
+    }
+  }
+}
+
+.l-footer-copyright {}

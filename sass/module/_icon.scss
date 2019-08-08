@@ -1,0 +1,21 @@
+@charset "utf-8";
+
+/*
+#icon
+iocnモジュールのスタイル指定
+*/
+.icon {}
+
+.icon-triangle {
+  display: inline-block;
+  height: 20px;
+
+  &:before {
+    position: absolute;
+    content: "";
+    border: 25px solid transparent;
+    border-bottom: 12px solid #EBEBEB;
+    right: 48%;
+    top: -23px;
+  }
+}

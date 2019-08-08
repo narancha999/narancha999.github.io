@@ -1,0 +1,13 @@
+@charset "utf-8";
+/*
+#typo
+テキスト体裁モジュールのスタイル指定
+*/
+
+.typo-copyright {
+  font-size: $font-size-xsmall;
+}
+
+.typo-small {
+  font-size: $font-size-small;
+}
